@@ -1,0 +1,96 @@
+QMainWindow {
+    background-color: #2b2b2b;
+}
+QWidget, QGroupBox {
+    color: #ffffff;
+}
+QGroupBox {
+    font-weight: bold;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    margin-top: 1ex;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 5px;
+    color: #ffffff;
+}
+QPushButton {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: #1976d2;
+}
+QPushButton:pressed {
+    background-color: #1565c0;
+}
+QPushButton:disabled {
+    background-color: #555555;
+    color: #888888;
+}
+QTabWidget::pane {
+    border: 1px solid #404040;
+    border-radius: 4px;
+    background-color: #333333;
+}
+QTabBar::tab {
+    background-color: #404040;
+    border: 1px solid #404040;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 6px 12px;
+    margin-right: 2px;
+    color: #ffffff;
+}
+QTabBar::tab:selected {
+    background-color: #333333;
+    border-bottom: 1px solid #333333;
+}
+QLineEdit, QComboBox, QTableWidget, QTextEdit {
+    border: 1px solid #404040;
+    border-radius: 4px;
+    padding: 3px;
+    background-color: #404040;
+    color: #ffffff;
+}
+QComboBox::drop-down {
+    border: none;
+}
+QComboBox::down-arrow {
+    image: url(down-arrow.png);  /* You might need to provide a white arrow icon */
+}
+QProgressBar {
+    border: 1px solid #404040;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #333333;
+    color: #ffffff;
+}
+QProgressBar::chunk {
+    background-color: #1e88e5;
+    width: 10px;
+    margin: 0.5px;
+}
+QHeaderView::section {
+    background-color: #404040;
+    padding: 4px;
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+QTableWidget {
+    gridline-color: #555555;
+}
+QRadioButton {
+    color: #ffffff;
+}
+QCheckBox {
+    color: #ffffff;
+}
