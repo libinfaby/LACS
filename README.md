@@ -1,5 +1,5 @@
 # LACS - Laboratory Analyzer Communication Simulator
-A PyQt6-based simulator for laboratory analyzers with LIS integration.
+An ASTM/HL7 communication simulator for laboratory analyzers with LIS integration.
 
 ## Installation
 1. Install Python 3.8+
