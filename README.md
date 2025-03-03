@@ -1,4 +1,4 @@
-# Laboratory Analyzer Simulator
+# LACS - Laboratory Analyzer Communication Simulator
 A PyQt6-based simulator for laboratory analyzers with LIS integration.
 
 ## Installation
@@ -10,4 +10,4 @@ A PyQt6-based simulator for laboratory analyzers with LIS integration.
 - Analyzer configuration
 - Sample management
 - Result generation and sending
-- ASTM message templating
+- ASTM/HL7 message templating
