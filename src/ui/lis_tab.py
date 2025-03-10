@@ -51,17 +51,21 @@ class LISTab(QWidget):
         tcp_layout.addRow("Socket Type:", socket_layout)
         
         # Analyzer address and port
-        self.analyzer_address = QLineEdit("127.0.0.1")
+        self.analyzer_address = QLineEdit("")
+        self.analyzer_address.setPlaceholderText("")
         tcp_layout.addRow("Analyzer Address:", self.analyzer_address)
         
-        self.analyzer_port = QLineEdit("12000")
+        self.analyzer_port = QLineEdit("")
+        self.analyzer_port.setPlaceholderText("0 - 65535")
         tcp_layout.addRow("Analyzer Port:", self.analyzer_port)
         
         # LIS address and port
-        self.lis_address = QLineEdit("127.0.0.1")
+        self.lis_address = QLineEdit("")
+        self.lis_address.setPlaceholderText("")
         tcp_layout.addRow("LIS Address:", self.lis_address)
         
-        self.lis_port = QLineEdit("13000")
+        self.lis_port = QLineEdit("")
+        self.lis_port.setPlaceholderText("0 - 65535")
         tcp_layout.addRow("LIS Port:", self.lis_port)
         
         left_layout.addWidget(self.tcp_widget)
@@ -73,7 +77,7 @@ class LISTab(QWidget):
         
         # Serial port
         self.serial_port = QComboBox()
-        self.serial_port.addItems(["COM1", "COM2", "COM3"])
+        self.serial_port.addItems(["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9"])
         serial_layout.addRow("Serial Port:", self.serial_port)
         
         # Baud rate

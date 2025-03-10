@@ -8,12 +8,13 @@ from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                             QLineEdit, QCheckBox, QTextEdit, QProgressBar, QGroupBox,
                             QFormLayout, QTableWidget, QTableWidgetItem, QHeaderView,
                             QSplitter, QMessageBox, QScrollArea, QSpacerItem, QSizePolicy,
-                            QStackedWidget, QFrame, QListWidget, QListWidgetItem, QToolButton)
+                            QStackedWidget, QFrame, QListWidget, QListWidgetItem, QToolButton, QTabBar)
 from PySide6.QtCore import Qt, QTimer, QThread, Signal, QDateTime, QSize
 from PySide6.QtGui import QFont, QIcon, QColor, QPalette
-from src.ui.result_tab import ResultTab
-from src.ui.sample_tab import SampleTab
 from src.ui.lis_tab import LISTab
+from src.ui.sample_tab import SampleTab
+from src.ui.result_tab import ResultTab
+from src.ui.tester_tab import TesterTab
 from src.database.db_manger import DatabaseManager
 
 class LabSimulator(QMainWindow):
@@ -83,10 +84,12 @@ class LabSimulator(QMainWindow):
         self.sample_tab = SampleTab(self)
         # self.result_tab = QWidget()
         self.result_tab = ResultTab(self)
+        self.tester_tab = TesterTab(self)
         
         self.tab_widget.addTab(self.lis_tab, "LIS")
         self.tab_widget.addTab(self.sample_tab, "Sample/Analyze")
         self.tab_widget.addTab(self.result_tab, "Results")
+        self.tab_widget.addTab(self.tester_tab, "Communication Tester")  
 
         # Connect any signals from the LIS tab to the main window
         # self.lis_tab.connection_status_changed.connect(self.update_status_bar) # for example only    
@@ -126,6 +129,7 @@ class LabSimulator(QMainWindow):
             conn.close()
             
             self.analyzer_combo.clear()
+            self.analyzer_combo.addItem('', -1)
             for analyzer in analyzers:
                 self.analyzer_combo.addItem(analyzer[1], analyzer[0])
         except Exception as e:
